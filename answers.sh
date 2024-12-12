@@ -12,7 +12,7 @@ SELECT Name FROM students WHERE Gender='F'  and Age>30;
 SELECT Points FROM students WHERE Name='Alex';
 
 #5. Add yourself as a new student (your name, your age...)
-INSERT Into students VALUES (NULL , 'Nour' , '19' ,'F' , 500);
+INSERT Into students VALUES (NULL , 'Nour' , '19' ,'F' , 600);
 
 #6. Increase the points of **Basma** because she solved a new exercice
 UPDATE students  Set  Points=Points+50 Where Name='Basma';
