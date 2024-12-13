@@ -20,3 +20,30 @@ UPDATE students  Set  Points=Points+50 Where Name='Basma';
 
 #7. Decrease the points of **Alex** because he's late today
 UPDATE students  Set  Points=Points-50 Where Name='Alex';
+
+### Creating Table
+CREATE TABLE graduates (
+   ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+   Name TEXT NOT NULL UNIQUE,
+   Age INTEGER,
+   Gender TEXT,
+   Points INTEGER,
+   Graduation TEXT
+);
+
+#10. Copy Layal's data from **students** to **graduates**
+
+INSERT INTO graduates (ID, Name,  Age,Gender, Points)
+SELECT ID, Name,  Age,Gender, Points
+FROM students
+WHERE name="Layal";
+
+#11. Add the graduation date previously mentioned to Layal's record in **graduates**
+UPDATE graduates
+SET Graduation = '2018/09/18'
+WHERE Graduation IS NULL;
+
+#12. Remove Layal's record from **students**
+DELETE FROM students
+WHERE Name = 'Layal';
+
