@@ -47,3 +47,43 @@ WHERE Graduation IS NULL;
 DELETE FROM students
 WHERE Name = 'Layal';
 
+### Joins
+#14. Produce a table that contains, for each employee, his/her name, company name, and company date.
+SELECT 
+  employees.ID,
+  employees.Name,
+  companies.Name,
+  companies.Date
+FROM 
+   employees
+ JOIN 
+    companies
+ON 
+    employees.Company = companies.Name;
+
+ #15. Find the name of **employees** that work in companies made before 2000.  
+   SELECT 
+    employees.Name 
+FROM 
+    employees
+JOIN 
+    companies 
+ON 
+    employees.Company = companies.Name
+WHERE 
+    companies.Date < 2000;
+
+ #16. Find the name of company that has a graphic designer.
+ SELECT 
+    companies.Name
+FROM 
+    companies
+JOIN 
+    employees 
+ON 
+    employees.Company = companies.Name
+WHERE 
+    employees.Role="Graphic Designer";
+
+
+  
