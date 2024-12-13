@@ -85,5 +85,32 @@ ON
 WHERE 
     employees.Role="Graphic Designer";
 
+### Count & Filter
+#18. Find the person with the highest number of points in **students**
+SELECT name
+FROM students
+WHERE Points =(SELECT MAX(Points) FROM students);
 
-  
+#19. Find the average of points in **students**
+
+SELECT AVG(Points) AS avarege
+FROM students;
+
+#20. Find the number of students that have 500 points
+
+SELECT COUNT(*) AS nbofstudent
+FROM students
+WHERE Points = 500;
+
+#21. Find the names of students that contains 's'
+
+SELECT *  FROM students
+WHERE name LIKE '%s%'; # all data from this students 
+
+SELECT Name  FROM students
+WHERE name LIKE '%s%'; #only names will appears
+
+#22. Find all students based on the decreasing order of their points
+
+SELECT * FROM students
+ORDER  By Points DESC;
